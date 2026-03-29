@@ -352,113 +352,168 @@
         min-height: auto;
         padding: 0;
         background: transparent;
-        border: none;
-        box-shadow: none;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
+@media (max-width: 520px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 14px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    min-height: 100dvh;
+  }
 
-      .front-content {
-        padding: 0;
-        max-width: 100%;
-      }
+  body.card-open {
+    display: block;
+    overflow-y: auto;
+  }
 
-      .front-content .small {
-        font-size: 13px;
-        letter-spacing: 1.5px;
-        margin-bottom: 10px;
-      }
+  .scene {
+    width: 100%;
+    min-height: 100dvh;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: none;
+  }
 
-      .front-content h1 {
-        font-size: 34px;
-      }
+  .card {
+    width: 100%;
+    height: auto;
+    min-height: unset;
+    transform-style: flat;
+  }
 
-      .hint {
-        position: static;
-        transform: none;
-        margin-top: 18px;
-        font-size: 13px;
-        padding: 10px 16px;
-        cursor: pointer;
-      }
+  .card.open {
+    transform: none;
+  }
 
-      .inside {
-        display: none;
-        transform: none;
-        margin-top: 18px;
-        padding: 12px;
-        gap: 12px;
-        overflow: visible;
-        height: auto;
-      }
+  .front,
+  .inside {
+    position: relative;
+    inset: auto;
+    border-radius: 22px;
+    backface-visibility: visible;
+    -webkit-backface-visibility: visible;
+  }
 
-      .card.open .inside {
-        display: grid;
-      }
+  .front {
+    min-height: 100dvh;
+    padding: 24px 18px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-      .card.open .front {
-        display: none;
-      }
+  .front-content {
+    padding: 0;
+    max-width: 100%;
+    text-align: center;
+  }
 
-      .right {
-        order: 1;
-        padding: 24px 16px 20px;
-        justify-content: flex-start;
-        overflow: visible;
-        height: auto;
-        min-height: unset;
-      }
+  .front-content .small {
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+  }
 
-      .right::before {
-        top: 12px;
-        right: 12px;
-        font-size: 20px;
-      }
+  .front-content h1 {
+    font-size: 34px;
+    line-height: 1.1;
+    margin: 0;
+  }
 
-      .right .subtitle {
-        font-size: 12px;
-        margin-bottom: 10px;
-        padding-right: 24px;
-      }
+  .hint {
+    position: static;
+    transform: none;
+    margin-top: 18px;
+    font-size: 13px;
+    padding: 10px 16px;
+    cursor: pointer;
+  }
 
-      .right h2 {
-        font-size: 24px;
-        margin-bottom: 14px;
-        padding-right: 26px;
-      }
+  .inside {
+    display: none;
+    transform: none;
+    margin-top: 18px;
+    padding: 12px;
+    gap: 12px;
+    overflow: visible;
+    height: auto;
+    grid-template-columns: 1fr;
+  }
 
-      .message {
-        font-size: 14px;
-        line-height: 1.75;
-      }
+  .card.open .inside {
+    display: grid;
+  }
 
-      .signature {
-        font-size: 16px;
-        margin-top: 14px;
-      }
+  .card.open .front {
+    display: none;
+  }
 
-      .left {
-        order: 2;
-        padding: 0;
-        height: auto;
-        min-height: unset;
-      }
+  .right {
+    order: 1;
+    padding: 24px 16px 20px;
+    justify-content: flex-start;
+    overflow: visible;
+    height: auto;
+    min-height: unset;
+  }
 
-      .photo-frame {
-        width: 100%;
-        height: auto;
-        min-height: unset;
-        padding: 10px;
-      }
+  .right::before {
+    top: 12px;
+    right: 12px;
+    font-size: 20px;
+  }
 
-      .photo-frame img {
-        width: 100%;
-        height: auto;
-        max-height: none;
-        object-fit: contain;
-      }
+  .right .subtitle {
+    font-size: 12px;
+    margin-bottom: 10px;
+    padding-right: 24px;
+  }
+
+  .right h2 {
+    font-size: 24px;
+    margin-bottom: 14px;
+    padding-right: 26px;
+  }
+
+  .message {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .signature {
+    font-size: 16px;
+    margin-top: 14px;
+  }
+
+  .left {
+    order: 2;
+    padding: 0;
+    height: auto;
+    min-height: unset;
+  }
+
+  .photo-frame {
+    width: 100%;
+    height: auto;
+    min-height: unset;
+    padding: 10px;
+  }
+
+  .photo-frame img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    display: block;
+  }
     }
 
     @media (max-height: 700px) and (min-width: 901px) {
