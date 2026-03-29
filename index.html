@@ -354,11 +354,22 @@ a {
 
       .front,
       .inside {
-        position: relative;
-        inset: auto;
-        border-radius: 22px;
-        backface-visibility: visible;
-        -webkit-backface-visibility: visible;
+  display: none;
+  transform: none;
+  margin-top: 18px;
+
+  /* 🔥 IMPORTANT */
+  min-height: calc(100dvh - 36px); /* fills screen */
+
+  padding: 20px 14px; /* equal top & bottom */
+
+  gap: 16px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 🔥 balances top & bottom */
+
+  border-radius: 22px;
       }
 
       .front {
