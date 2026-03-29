@@ -145,8 +145,8 @@
 
     .hint {
       position: absolute;
-      bottom: 200px;
       left: 50%;
+      bottom: 200px;
       transform: translateX(-50%);
       font-family: "Segoe UI", sans-serif;
       font-size: 14px;
@@ -256,19 +256,19 @@
     @media (max-width: 900px) {
       body {
         padding: 10px;
-        overflow: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
         align-items: flex-start;
       }
 
       .scene {
         width: min(100%, 700px);
-        height: auto;
+        height: 680px;
         min-height: 680px;
-        max-height: none;
       }
 
       .card {
-        min-height: 680px;
+        height: 100%;
       }
 
       .front,
@@ -279,14 +279,16 @@
 
       .inside {
         grid-template-columns: 1fr;
-        grid-template-rows: auto auto;
+        grid-template-rows: auto 1fr;
         padding: 12px;
         gap: 12px;
       }
 
       .right {
         order: 1;
-        padding: 40px 24px;
+        padding: 34px 24px 28px;
+        justify-content: flex-start;
+        overflow-y: auto;
       }
 
       .left {
@@ -295,8 +297,8 @@
       }
 
       .photo-frame {
-        min-height: 280px;
-        max-height: 340px;
+        min-height: 250px;
+        max-height: 300px;
       }
 
       .front-content h1 {
@@ -308,7 +310,7 @@
       }
 
       .hint {
-        bottom: 24px;
+        bottom: 200px;
         font-size: 13px;
       }
     }
@@ -316,18 +318,19 @@
     @media (max-width: 520px) {
       body {
         padding: 8px;
-        overflow: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
         align-items: flex-start;
       }
 
       .scene {
         width: 100%;
-        height: auto;
-        min-height: 760px;
+        height: 720px;
+        min-height: 720px;
       }
 
       .card {
-        min-height: 760px;
+        height: 100%;
       }
 
       .front {
@@ -367,12 +370,12 @@
       }
 
       .photo-frame {
-        min-height: 230px;
-        max-height: 300px;
+        min-height: 220px;
+        max-height: 260px;
       }
 
       .right {
-        padding: 20px 16px;
+        padding: 24px 16px 20px;
       }
 
       .right::before {
@@ -399,13 +402,13 @@
       }
 
       .signature {
-         font-size: 16px;
+        font-size: 16px;
         margin-top: 14px;
       }
 
       .hint {
+        bottom: 200px;
         font-size: 12px;
-        bottom: 18px;
         padding: 7px 12px;
       }
     }
