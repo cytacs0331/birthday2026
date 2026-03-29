@@ -422,11 +422,12 @@ a {
       }
 
       .right {
-        order: 1;
-        padding: 22px 16px 22px;
-        justify-content: flex-start;
-        overflow: visible;
-        height: auto;
+  order: 1;
+  padding: 24px 16px; /* equal spacing */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 🔥 this centers spacing top & bottom */
+      }
 @media (max-width: 520px) {
 
   body {
