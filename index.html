@@ -177,6 +177,7 @@
       background: transparent;
       min-width: 0;
       min-height: 0;
+      overflow: hidden;
     }
 
     .photo-frame {
@@ -192,8 +193,10 @@
     .photo-frame img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       border-radius: 16px;
+      display: block;
+      background: #fff;
     }
 
     .right {
@@ -218,6 +221,15 @@
       right: 16px;
       font-size: 24px;
       opacity: 0.65;
+      z-index: 2;
+    }
+
+    .right-scroll {
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding-right: 6px;
     }
 
     .right .subtitle {
@@ -256,25 +268,12 @@
     @media (max-width: 900px) {
       body {
         padding: 10px;
-        overflow-y: auto;
-        overflow-x: hidden;
-        align-items: flex-start;
+        align-items: center;
       }
 
       .scene {
         width: min(100%, 700px);
-        height: 680px;
-        min-height: 680px;
-      }
-
-      .card {
-        height: 100%;
-      }
-
-      .front,
-      .inside {
-        position: absolute;
-        inset: 0;
+        height: min(94vh, 760px);
       }
 
       .inside {
@@ -284,21 +283,34 @@
         gap: 12px;
       }
 
-      .right {
-        order: 1;
-        padding: 34px 24px 28px;
-        justify-content: flex-start;
-        overflow-y: auto;
-      }
-
       .left {
-        order: 2;
-        padding: 2px 2px 8px 2px;
+        order: 1;
+        padding: 2px 2px 4px 2px;
       }
 
       .photo-frame {
-        min-height: 250px;
-        max-height: 300px;
+        height: auto;
+        min-height: 240px;
+        max-height: 42vh;
+      }
+
+      .photo-frame img {
+        width: 100%;
+        height: auto;
+        max-height: calc(42vh - 20px);
+        object-fit: contain;
+      }
+
+      .right {
+        order: 2;
+        padding: 24px 20px 20px;
+        justify-content: flex-start;
+        overflow: hidden;
+      }
+
+      .right-scroll {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
       }
 
       .front-content h1 {
@@ -318,19 +330,11 @@
     @media (max-width: 520px) {
       body {
         padding: 8px;
-        overflow-y: auto;
-        overflow-x: hidden;
-        align-items: flex-start;
       }
 
       .scene {
         width: 100%;
-        height: 720px;
-        min-height: 720px;
-      }
-
-      .card {
-        height: 100%;
+        height: min(96vh, 820px);
       }
 
       .front {
@@ -366,16 +370,22 @@
       }
 
       .left {
-        padding: 2px 2px 8px 2px;
+        padding: 2px 2px 4px 2px;
       }
 
       .photo-frame {
         min-height: 220px;
-        max-height: 260px;
+        max-height: 38vh;
+      }
+
+      .photo-frame img {
+        height: auto;
+        max-height: calc(38vh - 20px);
+        object-fit: contain;
       }
 
       .right {
-        padding: 24px 16px 20px;
+        padding: 22px 16px 18px;
       }
 
       .right::before {
@@ -422,6 +432,10 @@
         padding: 24px 24px;
       }
 
+      .right-scroll {
+        overflow-y: auto;
+      }
+
       .message {
         line-height: 1.65;
         font-size: 14px;
@@ -463,27 +477,29 @@
         </div>
 
         <div class="right">
-          <div class="subtitle">Happy Birthday, My Love</div>
-          <h2>To my dearest Cherryl 🎂</h2>
+          <div class="right-scroll">
+            <div class="subtitle">Happy Birthday, My Love</div>
+            <h2>To my dearest Cherryl 🎂</h2>
 
-          <div class="message">
-            Happy birthday, my love.<br><br>
+            <div class="message">
+              Happy birthday, my love.<br><br>
 
-            On your special day, I just want to remind you how deeply loved you are.
-            Thank you for being such a beautiful part of my life, for your warmth,
-            your smile, and the love you give so effortlessly.<br><br>
+              On your special day, I just want to remind you how deeply loved you are.
+              Thank you for being such a beautiful part of my life, for your warmth,
+              your smile, and the love you give so effortlessly.<br><br>
 
-            You make my days softer, brighter, and more meaningful.
-            I am so grateful for you, and I pray that your heart stays happy,
-            your dreams continue to bloom, and your life overflows with love and blessings.<br><br>
+              You make my days softer, brighter, and more meaningful.
+              I am so grateful for you, and I pray that your heart stays happy,
+              your dreams continue to bloom, and your life overflows with love and blessings.<br><br>
 
-            No matter where life takes us, you will always have a very special place in my heart.
-            I love you so much, Cherryl. 💖
-          </div>
+              No matter where life takes us, you will always have a very special place in my heart.
+              I love you so much, Cherryl. 💖
+            </div>
 
-          <div class="signature">
-            Love always,<br>
-            Cy
+            <div class="signature">
+              Love always,<br>
+              Cy
+            </div>
           </div>
         </div>
       </div>
