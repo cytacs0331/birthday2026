@@ -341,6 +341,9 @@
 
       body.card-open {
         overflow-y: auto;
+        background:
+          radial-gradient(circle at top right, rgba(255, 210, 225, 0.45), transparent 30%),
+          #fff9fc;
       }
 
       .scene {
@@ -349,7 +352,7 @@
         height: auto;
         display: block;
         perspective: none;
-        padding: 0 12px 18px;
+        padding: 0;
       }
 
       .card {
@@ -366,7 +369,6 @@
       .inside {
         position: relative;
         inset: auto;
-        border-radius: 22px;
         backface-visibility: visible;
         -webkit-backface-visibility: visible;
       }
@@ -377,6 +379,7 @@
         background: transparent;
         border: none;
         box-shadow: none;
+        border-radius: 22px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -419,13 +422,14 @@
         transform: none;
         margin-top: 16px;
         margin-bottom: 15px;
-        padding: 16px 12px 14px;
-        gap: 12px;
+        padding: 0;
+        gap: 0;
         overflow: visible;
         height: auto;
         background: transparent;
-        border: 1px solid rgba(227, 161, 186, 0.35);
-        box-shadow: 0 18px 45px rgba(181, 87, 118, 0.18);
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
       }
 
       .card.open .inside {
@@ -440,13 +444,15 @@
       .right {
         order: 1;
         padding: 18px 16px 0;
-        margin: 0;
+        margin: 0 12px;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         overflow: visible;
-        background: transparent;
-        border-radius: 0;
+        background:
+          radial-gradient(circle at top right, rgba(255, 210, 225, 0.45), transparent 30%),
+          #fff9fc;
+        border-radius: 22px;
         box-shadow: none;
       }
 
@@ -483,6 +489,7 @@
         order: 2;
         padding: 0;
         min-height: unset;
+        margin: 0 12px 12px;
       }
 
       .photo-frame {
@@ -617,7 +624,7 @@
     });
 
     document.getElementById("insideCard").addEventListener("click", function (e) {
-      if (window.innerWidth <= 520 && e.target === this) {
+      if (window.innerWidth <= 520) {
         e.stopPropagation();
         toggleCard();
       }
