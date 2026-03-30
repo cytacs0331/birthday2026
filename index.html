@@ -415,18 +415,18 @@
       }
 
       .inside {
-        display: none;
-        transform: none;
-        margin-top: 16px;
-        margin-bottom: 15px;
-        padding: 16px 12px 14px;
-        gap: 12px;
-        overflow: visible;
-        height: auto;
-        background: transparent;
-        border: 1px solid rgba(227, 161, 186, 0.35);
-        box-shadow: 0 18px 45px rgba(181, 87, 118, 0.18);
-      }
+  display: none;
+  transform: none;
+  margin-top: 16px;
+  margin-bottom: 15px;
+  padding: 0;
+  gap: 12px;
+  overflow: visible;
+  height: auto;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
 
       .card.open .inside {
         display: flex;
@@ -617,9 +617,9 @@
     });
 
     document.getElementById("insideCard").addEventListener("click", function (e) {
-  e.stopPropagation();
-  toggleCard();
-
+      if (window.innerWidth <= 520 && e.target === this) {
+        e.stopPropagation();
+        toggleCard();
       }
     });
   </script>
