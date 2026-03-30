@@ -345,7 +345,7 @@
 
       .scene {
         width: 100%;
-        min-height: 100dvh;
+        min-height: auto;
         height: auto;
         display: block;
         perspective: none;
@@ -354,12 +354,14 @@
 
       .card {
         height: auto;
-        min-height: 100dvh;
+        min-height: auto;
         transform-style: flat;
       }
 
       .card.open {
         transform: none;
+        min-height: auto;
+        height: auto;
       }
 
       .front,
