@@ -344,41 +344,31 @@
       }
 
       .scene {
-  width: 100%;
-  min-height: auto;
-  height: auto;
-  display: block;
-  perspective: none;
-  padding: 0 12px 40px;
-}
+        width: 100%;
+        min-height: 100dvh;
+        height: auto;
+        display: block;
+        perspective: none;
+        padding: 0 12px 18px;
+      }
 
-     .card {
-  height: auto;
-  min-height: auto;
-  transform-style: flat;
-  display: block;
-}
+      .card {
+        height: auto;
+        min-height: 100dvh;
+        transform-style: flat;
+      }
 
       .card.open {
-  height: auto;
-  min-height: auto;
-}
-
+        transform: none;
+      }
 
       .front,
-.inside {
-  position: relative;
-  inset: auto;
-  border-radius: 22px;
-  backface-visibility: visible;
-  -webkit-backface-visibility: visible;
-}
-
-      .left,
-      .right,
-      .photo-frame {
-        height: auto;
-        min-height: unset;
+      .inside {
+        position: relative;
+        inset: auto;
+        border-radius: 22px;
+        backface-visibility: visible;
+        -webkit-backface-visibility: visible;
       }
 
       .front {
@@ -440,11 +430,13 @@
 }
 
       .card.open .inside {
-  display: flex;
-  flex-direction: column;
-  height: auto;
-  min-height: max-content;
-}
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card.open .front {
+        display: none;
+      }
 
       .right {
         order: 1;
@@ -626,11 +618,11 @@
     });
 
     document.getElementById("insideCard").addEventListener("click", function (e) {
-  e.stopPropagation();
-  toggleCard();
-});
-
-    
+      if (window.innerWidth <= 520 && e.target === this) {
+        e.stopPropagation();
+        toggleCard();
+      }
+    });
   </script>
 </body>
 </html>
