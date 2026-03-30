@@ -337,22 +337,9 @@
         height: 100dvh;
         overflow: hidden;
       }
-      body,
-body.card-open {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: scroll;
-  min-height: 100%;
-}
-
-html {
-  min-height: 100%;
-}
-
       body.card-open {
         overflow-y: auto;
         min-height: auto;
-        min-height: max(100dvh, 2200px);
         height: auto;
       }
 
@@ -373,6 +360,10 @@ html {
 
       .card.open {
         transform: none;
+        background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+  min-height: 100%;
       }
 
       .front,
