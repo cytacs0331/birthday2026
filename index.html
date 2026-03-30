@@ -356,6 +356,7 @@
         height: auto;
         min-height: 100dvh;
         transform-style: flat;
+        background: transparent;
       }
 
       .card.open {
@@ -366,9 +367,11 @@
       .inside {
         position: relative;
         inset: auto;
-        border-radius: 22px;
+        border-radius: 0px;
         backface-visibility: visible;
         -webkit-backface-visibility: visible;
+        box-shadow: none;
+        overflow: visible;
       }
 
       .front {
