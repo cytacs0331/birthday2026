@@ -618,11 +618,11 @@
     });
 
     document.getElementById("insideCard").addEventListener("click", function (e) {
-      if (window.innerWidth <= 520 && e.target === this) {
-        e.stopPropagation();
-        toggleCard();
-      }
-    });
+  if (window.innerWidth <= 520) {
+    e.stopPropagation();
+    toggleCard();
+  }
+});
   </script>
 </body>
 </html>
